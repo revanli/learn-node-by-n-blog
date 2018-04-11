@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/revanli/learn-node-by-n-blog#readme",
   "dependencies": {
+    "ejs": "^2.5.8",
     "express": "^4.14.0"
   }
 }
