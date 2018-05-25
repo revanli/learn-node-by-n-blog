@@ -3,9 +3,15 @@
   <div class="eight wide column">
 
     <% if (success) { %>
-      <div class="ui error message">
-        <p><%= error %></p>
+      <div class="ui success message">
+        <p><%= success %></p>
       </div>
+    <% } %>
+
+    <% if (error) { %>
+    <div class="ui error message">
+      <p><%= error %></p>
+    </div>
     <% } %>
 
   </div>

@@ -17,7 +17,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
   const name = req.fields.name
   const gender = req.fields.gender
   const bio = req.fields.bio
-  const avatar = req.fields.avatar.path.split(path.sep).pop()
+  const avatar = req.files.avatar.path.split(path.sep).pop()
   let password = req.fields.password
   const repassword = req.fields.repassword
 
@@ -63,7 +63,7 @@ router.post('/', checkNotLogin, function (req, res, next) {
 
   // 用户信息写入数据库
   UserModel.create(user)
-    .ten(function (result) {
+    .then(function (result) {
       user = result.ops[0]
       // 删除密码敏感信息，将用户信息存入session
       delete user.password

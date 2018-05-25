@@ -1,10 +1,12 @@
 {
-  "name": "nblog",
+  "name": "NBlog",
   "version": "1.0.0",
-  "description": "",
+  "description": "revan's blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover _mocha",
+    "start": "NODE_ENV=production pm2 start index.js --name 'Nblog'"
+    "heroku": "NODE_ENV=production node index"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,8 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "supertest": "^3.1.0"
   }
 }
